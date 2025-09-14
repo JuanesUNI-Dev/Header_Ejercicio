@@ -24,45 +24,54 @@ export default function Header() {
         
         {/* Logo de hollow kniwn*/}
         <div className="flex items-center gap-6">
-          <Link href="/">
-            <Image
-              src={logo}
-              alt="Logo de la tienda"
-              width={180}
-              height={180}
-              className="object-contain"
-            />
-          </Link>
-
+          
           {/* Menú */}
-          <div className="hidden sm:flex gap-4 font-medium">
-            <Link href="/">
+
+
+        <div className="flex items-center">
+        <Link href="/">
             <Image
-              src={logo2}
-              alt="Logo de la tienda"
-              width={240}
-              height={100}
-              className="object-contain"
+            src={logo}
+            alt="Logo de Hollow Knight"
+            width={120}
+            height={120}
+            className="object-contain"
             />
-          </Link>
+        </Link>
+        </div>
+         {/* Logo de fashon de hollow knight*/}
+        <div className="absolute left-1/2 top-[90px] transform -translate-x-1/2">
+        <Link href="/">
+        <Image 
+            src={logo2} 
+            alt="Hollow Fashion" 
+            width={200} 
+            height={80} 
+            className="object-contain"
+        />
+        </Link>
+        </div>
+        <div className="hidden sm:flex gap-4 font-bold">
+            <Link href="/">Inicio</Link>
             <Link href="/hombre">Hombre</Link>
             <Link href="/mujeres">Mujeres</Link>
-          </div>
+        </div>
         </div>
 
         {/* Carrito y Login */}
-        <div className="flex gap-4">
-          <Link href="/carrito">
+        <div className="flex items-center gap-4">
+        <Link href="/carrito">
             <Image
-              src={cart}
-              alt="Logo de la tienda"
-              width={40}
-              height={40}
-              className="object-contain"
+            src={cart}
+            alt="Carrito"
+            width={60}
+            height={60}
+            className="object-contain -mt-2"
             />
-          </Link>
-          <Link href="/login">Iniciar Sesión</Link>
+        </Link>
+        <Link href="/login" className="font-bold">Iniciar Sesión</Link>
         </div>
+
       </nav>
     </header>
   );
