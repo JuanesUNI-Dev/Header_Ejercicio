@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const banner = "/banner.webp";
+const banner = "/banner.png";
 const logo = "/Hollownightlogo.webp";
+const cart = "/shopping_cart2.webp";
+
 
 export default function Header() {
   return (
@@ -17,7 +19,7 @@ export default function Header() {
       />
 
       {/* Barra de navegación */}
-      <nav className="flex justify-between items-center text-black px-6 py-4 relative">
+      <nav className="flex justify-between items-center text-white px-6 py-4 relative">
         
         {/* Logo de hollow kniwn*/}
         <div className="flex items-center gap-6">
@@ -41,7 +43,15 @@ export default function Header() {
 
         {/* Carrito y Login */}
         <div className="flex gap-4">
-          <Link href="/carrito">Carrito</Link>
+          <Link href="/carrito">
+            <Image
+              src={cart}
+              alt="Logo de la tienda"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </Link>
           <Link href="/login">Iniciar Sesión</Link>
         </div>
       </nav>
