@@ -1,31 +1,51 @@
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 
-
-const banner = '/banner.webp'
-
+const banner = "/banner.webp";
+const logo = "/Hollownightlogo.webp";
 
 export default function Header() {
-    return (
-        <header className=" flex flex-col w-full h-[500px] bg-white relative ">
+  return (
+    <header className="relative w-full h-[500px] flex flex-col">
+      {/* Banner */}
+      <Image
+        src={banner}
+        alt="Banner"
+        fill
+        className="object-cover -z-10"
+        priority
+      />
 
-            <Image src={banner} fill />
+      {/* Barra de navegación */}
+      <nav className="flex justify-between items-center text-black px-6 py-4 relative">
+        
+        {/* Logo de hollow kniwn*/}
+        <div className="flex items-center gap-6">
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Logo de la tienda"
+              width={60}
+              height={60}
+              className="object-contain"
+            />
+          </Link>
 
-            <nav className="flex justify-between text-black mx-4 mt-6 relative">
-                <div className="flex justify-between">
-                    <Link className="mr-10" href='/' > Logo de la tienda </Link>
-                    <div className="hidden sm:flex">
-                        <Link className="mr-2" href='/'>Home</Link>
-                        <Link className="mr-2" href='/products' >Productos</Link>
-                        <Link className="mr-2" href='/contact' >Contacto</Link>
-                    </div>
-                </div>
-                <div>
-                    <Link href='/login' >Iniciar Sesion</Link>
-                </div>
+          {/* Menú */}
+          <div className="hidden sm:flex gap-4 font-medium">
+            <Link href="/">Inicio</Link>
+            <Link href="/hombre">Hombre</Link>
+            <Link href="/mujeres">Mujeres</Link>
+          </div>
+        </div>
 
-            </nav>
-
-        </header>
-    )
+        {/* Carrito y Login */}
+        <div className="flex gap-4">
+          <Link href="/carrito">Carrito</Link>
+          <Link href="/login">Iniciar Sesión</Link>
+        </div>
+      </nav>
+    </header>
+  );
 }
+
