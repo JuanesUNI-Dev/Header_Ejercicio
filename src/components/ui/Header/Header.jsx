@@ -4,6 +4,7 @@ import Image from "next/image";
 const banner = "/banner.png";
 const logo = "/Hollownightlogo.webp";
 const cart = "/shopping_cart2.webp";
+const logo2 = "/fashon.webp";
 
 
 export default function Header() {
@@ -27,15 +28,23 @@ export default function Header() {
             <Image
               src={logo}
               alt="Logo de la tienda"
-              width={60}
-              height={60}
+              width={180}
+              height={180}
               className="object-contain"
             />
           </Link>
 
           {/* Menú */}
           <div className="hidden sm:flex gap-4 font-medium">
-            <Link href="/">Inicio</Link>
+            <Link href="/">
+            <Image
+              src={logo2}
+              alt="Logo de la tienda"
+              width={240}
+              height={100}
+              className="object-contain"
+            />
+          </Link>
             <Link href="/hombre">Hombre</Link>
             <Link href="/mujeres">Mujeres</Link>
           </div>
